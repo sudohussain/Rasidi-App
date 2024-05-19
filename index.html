@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق رصيدي</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
+    <!-- Bootstrap -->
+
+    <!-- google libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- google libraries -->
+
+
+    <style>
+        
+        body{
+            direction: rtl;
+            
+            font-family: 'Tajawal', sans-serif;
+            font-weight: bold;
+        }
+       
+
+
+    </style>
+
+</head>
+<body >
+
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">رصيدي</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active " aria-current="page" href="index.html">ميزانيتي</a>
+
+              <!-- Todo -->
+              <!-- <a class="nav-link" href="#">الديون</a>  -->
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- //Nav bar// -->
+    
+    <div class="container text-center pt-3" >
+
+        <!-- title -->
+        <div class="row mt-5 p-3 bg-dark-subtle" >
+            <div class="col">
+              <h1>ميزانيتي</h1>
+            </div>
+          </div>
+        <!-- \\tilte\\ -->
+
+
+          <!--budgets container  -->
+        <div class="row g-4 mt-5 mb-5" id="budget-cards">
+
+            <!-- budget card  -->
+            <div class="col-sm-6 mb-3 mb-sm-0" >
+              <div class="card">
+                <div class="card-body">
+                     <!-- Button trigger modal for edit and add info -->
+                    <div class="float-end"><button type="button" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#edit-add-card-modal">
+                        <span class="material-symbols-outlined" >
+                        settings
+                        </span>
+                    </button></div>
+                    <!-- //Button trigger modal for edit and add info //-->
+
+                    <!-- button modal for delete card -->
+                    <div class="float-start"><button type="button" class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <span class="material-symbols-outlined" >
+                        delete
+                        </span>
+                    </button></div>
+                    <!--// button modal for delete card// -->
+
+                    <h5 class="card-title">مطاعم</h5>
+                    
+                    <p class="card-text"  >500</p>
+                    <div class="input-group input-group-lg mb-2">
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">المبلغ</span>
+                    </div>
+                    <button type="button" class="btn bg-dark-subtle my-btns" >
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+              </div>
+            </div>
+            <!-- //budget card//  -->
+
+            
+
+
+              
+
+            
+            
+        </div>
+        <!--//budgets container//  -->
+
+        <!-- modal for edit and add info budget -->
+        <div class="modal fade" id="edit-add-card-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">العنوان</span>
+                            <input type="text" id="title-input" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                        </div>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">المبلغ</span>
+                            <input type="tel" id="amount-input"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                        <button type="button" id="save-info-button" onclick="confirmEdit()" class="btn btn-primary" data-bs-dismiss="modal">حفظ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //modal for edit and add budget// -->
+
+        <!-- add new budget modal-->
+        <div class="modal fade" id="add-new-budget" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">أضف ميزانية جديدة</h1>
+                    
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">العنوان</span>
+                            <input type="text" id="budget-title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                        </div>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">المبلغ</span>
+                            <input type="tel" id="budget-amount"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                        <button type="button" id="confim-add-new-budget" onclick="confirmAdd()" class="btn btn-primary" data-bs-dismiss="modal">إضافة</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- //add new budget modal//-->
+
+        
+        
+        <!-- Modal for delet card -->
+        <div class="modal fade" id="delet-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="delet-modal-title"></h1>
+                        
+                    </div>
+                    <div class="modal-body" style="font-size: 30px; color: rgb(114, 12, 12);">
+                        هل أنت متأكد من حذفه؟
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="confirmDelet()">نعم</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- //Modal for delet card// -->   
+        
+
+       <!-- add budget card -->
+     <div class="row mt-5 p-3  mb-3  fixed-bottom  text-center" >
+        <div class="col " style="height: 20px;">
+            <button type="button" class="btn bg-dark-subtle my-btns"   data-bs-toggle="modal" data-bs-target="#add-new-budget">
+                <span class="material-symbols-outlined">
+                    library_add
+                </span>
+            </button>
+        </div>
+      </div>
+    <!-- \\add budget card\\ -->
+
+
+    </div>
+
+    
+
+     
+    
+    
+</body>
+<script src="index.js"></script>
+</html>
